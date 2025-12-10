@@ -6,12 +6,17 @@ Copy the code below into your workspace:
 //Función para imprimir con método join
 let arr = ["This", "is", "a", "sentence."];
 const printOutString = () => {
-  return arr.join(" ");
+  let printText = arr.join(" ")
+  return printText;
 };
 
 console.log(printOutString());
 
 //Función para imprimir con método join 
-const printOutStringSimple = () => arr.join(" - ");
-
+const printOutStringSimple = () => {
+  let printTextGuion = arr.join(" - ");
+  return printTextGuion;
+}
 console.log(printOutStringSimple());
+
+export { printOutString, printOutStringSimple} ;

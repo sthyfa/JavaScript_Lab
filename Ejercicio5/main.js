@@ -12,57 +12,56 @@ let people = ["Maria", "Dani", "Luis", "Juan", "Camila"];
 7.	Write the command that gives the indexOf where "Maria" is located.
 At the end of the exercise, there should be 4 people in the array.
 */
-
 let people = ["Maria", "Dani", "Luis", "Juan", "Camila"];
-
-//1. Comando para imprimir todos los nombres de la lista 
-console.log(`Los nombres de la lista son: ${people.join(", ")}`);
-
-//2. Comando para eliminar a "Dani" de la lista
-people.splice(1, 1);
-console.log(`Los nombres de la lista son: ${people.join(", ")}`);
-
-//3. Comando para eliminar a "Juan" de la lista
-people.splice(2, 1);
-console.log(`Los nombres de la lista son: ${people.join(", ")}`);
-
-//4. Comando para mover a Luis al inicio del array
-const moveLuis = () => {
+const resultadosFunction = () => {
+    let resultados= [];
+    // 1. Imprimir todos los nombres
+    people.join(", ");
+    console.log(people);
+    // 2. Eliminar "Dani"
+    people.splice(1, 1);
+    console.log(people);
+    // 3. Eliminar "Juan"
+    people.splice(2, 1);
+    console.log(people);
+    // 4. Mover "Luis" al inicio
     let luis = people.splice(1, 1)[0];
     people.unshift(luis);
-    return people;
-};
-console.log(`Los nombres de la lista son: ${moveLuis().join(", ")}`);
-
-//5. Agregar mi nombre al final del array
-people.push("Fancy");
-console.log(`Los nombres de la lista son: ${people.join(", ")}`);
-
-/* 6. Mediante un bucle, itere a través de este array y, 
-después de console.log "María", salga del bucle. (usar break)
-*/
-const mariaOut = () => {
-    for(let i = 0; i < people.length; i++){
-        if(people[i] === "Maria"){
-            break;
-        };
-        return people[i];
-    };
+    console.log(people);
+    // 5. Agregar tu nombre al final
+    people.push("Fancy");
+    console.log(people);
+    resultados.push(`Punto 1-5. Los nombres de la lista son: ${people.join(", ")}. 
+    -----> Más detalle en consola.<------`);
+    return resultados;
 };
 
-console.log(mariaOut());
+resultadosFunction();
 console.log(people);
 
-// 7. Comando para el indexOf donde se encuentra "María".
+ // 6. Mostrar nombres antes de "Maria"
+const mariaOut = () => { 
+    let index = 0;
+    for(let i = 0; i < people.length; i++){
+        if(people[i] === "Maria"){ 
+            index = i;
+            break; 
+        };
+    };
+    let textArray = people.slice(0, index).join(", ");
+       return `Punto 6. Antes de "Maria", los nombres son: ${textArray}`;
+}; 
+console.log(mariaOut());
 
+// 7. Índice de "Maria"
 const mariaIndex = () => {
     for (let i = 0; i < people.length; i++) {
         if (people[i] === "Maria") {
-            return i; 
-        };
-    };
-    return "María no está, María se fue, María se escapa de tu vida";
-};
+            return `Punto 7. El índice de María es: ${i}`; 
+        }; 
+    }; 
+    return "Punto 7. María no está, María se fue, María se escapa de tu vida"; 
+}; 
+console.log(mariaIndex());
 
-console.log(`El índice de María es: ${mariaIndex()}`);
-
+export { resultadosFunction, mariaOut, mariaIndex };

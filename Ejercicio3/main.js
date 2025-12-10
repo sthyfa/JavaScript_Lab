@@ -8,26 +8,33 @@ let numeros = [1, 2, 3, 4];
 const funcionSumaProducto = (operacion) => {
     let resultadoSuma = 0;
     let resultadoProducto = 1;
+    let message = "";
 
     switch (operacion) {
         case "sumar":
             for (let i = 0; i < numeros.length; i++) {
                 resultadoSuma += numeros[i];
             }
-            return `La suma es: ${resultadoSuma}`;
+            message = `El resultado de sumar los elementos del array: ${numeros} es: ${resultadoSuma}`;
+            break;
 
         case "multiplicar":
             for (let i = 0; i < numeros.length; i++) {
                 resultadoProducto *= numeros[i];
             }
-            return `El producto es: ${resultadoProducto}`;
+            message = `El resultado de multiplicar los elementos del array: ${numeros} es: ${resultadoProducto}`;
+            break;
 
         default:
-            return "Opción no válida. Usa 'sumar' o 'multiplicar'.";
-    }
+            message = "Opción no válida. Usa 'sumar' o 'multiplicar'.";
+    };
+
+    return message;
 };
 
 // Llamadas de la función
 console.log(funcionSumaProducto("sumar"));
 console.log(funcionSumaProducto("multiplicar"));
 console.log(funcionSumaProducto("restar"));
+
+export { funcionSumaProducto };
