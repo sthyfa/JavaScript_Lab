@@ -13,7 +13,7 @@ let people = ["Maria", "Dani", "Luis", "Juan", "Camila"];
 At the end of the exercise, there should be 4 people in the array.
 */
 let people = ["Maria", "Dani", "Luis", "Juan", "Camila"];
-const resultadosFunction = () => {
+/*const resultadosFunction = () => {
     let resultados= [];
     // 1. Imprimir todos los nombres
     people.join(", ");
@@ -65,3 +65,71 @@ const mariaIndex = () => {
 console.log(mariaIndex());
 
 export { resultadosFunction, mariaOut, mariaIndex };
+*/
+// 1. Imprimir todos los nombres
+const listPeople = () => {
+    const list = people.join(" - ");
+    return list;
+};
+console.log(`El array original es: ${listPeople()}`);
+
+// 2. Eliminar "Dani"
+const removeDani = () => {
+    people.splice(1, 1);
+    const removeNameD = people.join(" - ");
+    return removeNameD;
+};
+console.log(`Se elimina a Dani de la lista. El nuevo array es: ${removeDani()}`);
+
+// 3. Eliminar "Juan"
+const removeJuan = () => {
+    people.splice(2, 1);
+    const removeNameJ = people.join(" - ");
+    return removeNameJ;    
+};
+console.log(`Se elimina a Juan de la lista. El nuevo array es: ${removeJuan()}`);
+
+// 4. Mover "Luis" al inicio
+const movLuis = () => {
+    let luis = people.splice(1, 1)[0];
+    people.unshift(luis);
+    const firsLuis = people.join(" - ");
+    return firsLuis;
+};
+console.log(`Luis cambia de posición al índice 1. El nuevo array es: ${movLuis()}`);
+
+// 5. Agregar tu nombre al final
+const addMyName = () => {
+    people.push("Fancy");
+    const addName = people.join(" - ");
+    return addName;
+};
+console.log(`Se inserta un nombre. El nuevo array es: ${addMyName()}`);
+
+// 6. Mostrar nombres antes de "Maria"
+const mariaOut = () => { 
+    let message = []; 
+    for (let i = 0; i < people.length; i++) {
+        if (people[i] === "Maria") { 
+            break; 
+        };
+        message.push(people[i]);
+    };
+    message = message.join(", ")
+    return `Índices antes de "Maria": ${message}`;
+};
+console.log(mariaOut());
+
+// 7. Índice de "Maria"
+const mariaIndex = () => {
+    const indexMaria = people.indexOf("Maria");
+    return `El índice de "Maria es: ${indexMaria}`;
+}; 
+console.log(mariaIndex());
+
+const messageConsola = () => "--->Revisar los resultados en consola<---";
+
+export { listPeople, removeDani, removeJuan, movLuis, addMyName, mariaOut, mariaIndex, messageConsola };
+
+
+

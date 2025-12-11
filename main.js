@@ -2,7 +2,7 @@ import { printOutStringSimple, printOutString } from "./Ejercicio1/main.js";
 import { doubleArrayMap } from "./Ejercicio2/main.js";
 import { funcionSumaProducto } from "./Ejercicio3/main.js";
 import { commonCourseFunction } from "./Ejercicio4/main.js";
-import { resultadosFunction, mariaOut, mariaIndex } from "./Ejercicio5/main.js";
+import { listPeople, removeDani, removeJuan, movLuis, addMyName, mariaOut, mariaIndex, messageConsola} from "./Ejercicio5/main.js";
 import { bubble } from "./Ejercicio6/main.js";
 
 // Función para crear contenido dentro de cajas
@@ -29,10 +29,16 @@ createBox("Ejercicio 3 Producto", funcionSumaProducto("multiplicar"));
 createBox("Ejercicio 4", commonCourseFunction());
 
 // Ejercicio 5
-let ej5Content = `
-${resultadosFunction()}<br>
+/*${listPeople()}<br>
+${removeDani()}<br>
+${removeJuan()}<br>
+${movLuis()}<br>
+${addMyName()}<br>
 ${mariaOut()}<br>
 ${mariaIndex()}
+*/
+let ej5Content = `
+${messageConsola()}
 `;
 createBox("Ejercicio 5", ej5Content);
 
